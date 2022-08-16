@@ -20,7 +20,6 @@ linkedin_username: "pedro-holanda-5447335a"
 #########################################################################################
 theme: "minima"
 
-rss: rss
 
 kramdown:
   syntax_highlighter_opts:
