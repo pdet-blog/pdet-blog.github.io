@@ -30,9 +30,13 @@ con.execute("LOAD 'scrooge'")
 ## The Yahoo Finance Function
 In this extension, I've implemented a scanner that directly retrieves data from [Yahoo Finance](https://finance.yahoo.com/) and transforms it to a DuckDB Table.
 The function takes 4 parameters.
+
 1) The symbol of the financial object we want to query (e.g., ^GSPC is the symbol for the S&P500 index).
+
 2) The date start period we want to analyze.
+
 3) The date end period we want to analyze.
+
 4) The interval we want to fetch data from yahoo. We currently support: "1d" for 1 day. "5d" for 5 days. "1wk" for a week. "1mo" for a month. "3mo" for 3 months.
 
 An example of its usage is:
@@ -41,12 +45,19 @@ select * FROM yahoo_finance("^GSPC", "2017-12-01", "2017-12-10", "1d")
 ```
 
 This returns a table with 7 columns.
+
 1) Date: The reference date of the row.
+
 2) Open: Refers to the price at which the financial object started trading at the beginning of the trading day.
+
 3) High: The highest value of the financial object on that trading day.
+
 4) Low: The lowest value of the financial object on that trading day.
+
 5) Close: Refers to the final price at which the financial object was traded at the end of the trading day.
+
 6) Adj Close: The adjusted closing price of the financial object. It is calculated by taking into account any corporate actions, such as stock splits, dividends, or rights offerings, that affect its price .
+
 7) Volume: The total number of shares or contracts of the financial object that have been traded during that day.
 
 Additionally, you can also submit a list of financial symbols, instead of only one financial symbols, to the yahoo_finance function.
@@ -88,10 +99,13 @@ df = con.execute("select symbol, volatility(close) as volatility from stocks gro
 df.plot.bar(x="symbol", y="volatility")
 ```
 As expected, the cassino lifestyle of crypto-assets is dominating the visualization of the chart.
+
 ![Volatility](/volatility.png)
 
+
 If we exclude the crypto-coins, we can see that more traditional-seasonal investments (Gas?) are not as volatile in a long term.
-![Volatility](/volatility_2.png)
+
+![Volatility_2](/volatility_2.png)
 
 ## Correlation Analysis
 Of couse, no wallet is really safe if you accidentally put all your eggs in one basket. When analyzing what to buy, checking the correlation of your assets is a must. DuckDB implements a correlation function, that we can directly use in our query.
@@ -115,6 +129,7 @@ df = con.execute(sql).df()
 df.plot.bar(x="pair", y="corr")
 ```
 To (I hope) no ones surprise, it seems that ETH and BTC are highly correlated, hence buying both coins, will be a poor diversity strategy. While Shell and Meta present a negative correlation, which can contribute to a more diverse wallet.
+
 ![Correlation](/corr.png)
 
 ## Conclusion and Feedback
