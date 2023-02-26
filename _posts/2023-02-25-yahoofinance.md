@@ -2,7 +2,7 @@
 
 *TLDR: Scrooge is a third-party DuckDB extension focusing on financial data analysis. Besides implementing statistical and time-series functions catered to financial data. It allows users to directly query Yahoo Financial's historical data with DuckDB's SQL complete OLAP engine.*
 
-Scrooge lets users directly query financial data using DuckDB's [extensive statistical library](https://duckdb.org/docs/sql/functions/overview). It also facilitates data analysis by leveraging DuckDB's extensive integration with the Python eco-system. This makes it possible for users to quickly visualize their data or even train ML models on it (e.g., through DuckDB's [Tensorflow](https://github.com/duckdb/duckdb/pull/6348) and [Pytorch](https://github.com/duckdb/duckdb/pull/6295) integrations).
+[Scrooge](https://github.com/pdet/Scrooge-McDuck) lets users directly query financial data using DuckDB's [extensive statistical library](https://duckdb.org/docs/sql/functions/overview). It also facilitates data analysis by leveraging DuckDB's extensive integration with the Python eco-system. This makes it possible for users to quickly visualize their data or even train ML models on it (e.g., through DuckDB's [Tensorflow](https://github.com/duckdb/duckdb/pull/6348) and [Pytorch](https://github.com/duckdb/duckdb/pull/6295) integrations).
 You can download a colab with all the code used in this blog post [here](https://colab.research.google.com/drive/1n853n91tAnPviNpJaEoswMH45Xja_OUD?usp=sharing).
 
 Note: Don't take the examples in this blog post as financial tips! I'm usually only good at losing money fast.
